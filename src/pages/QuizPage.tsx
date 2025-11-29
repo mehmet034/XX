@@ -63,23 +63,23 @@ const QuizPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-white/10 sticky top-0 bg-white/10 backdrop-blur-lg z-10 shadow-lg">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-4">
+        <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => navigate("/")}
-              className="hover:bg-white/10 text-white"
+              className="hover:bg-white/10 text-white shrink-0 px-2 sm:px-4"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Ana Sayfa
+              <ArrowLeft className="w-4 h-4 sm:mr-2" />
+              <span className="hidden sm:inline">Ana Sayfa</span>
             </Button>
-            <h1 className="text-lg md:text-xl font-semibold text-white">{quiz.title}</h1>
+            <h1 className="text-sm sm:text-lg md:text-xl font-semibold text-white truncate">{quiz.title}</h1>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto py-8">
+      <main className="container mx-auto py-4 sm:py-8 px-2 sm:px-4">
         {quizState === "intro" && (
           <QuizIntro
             title={quiz.title}
